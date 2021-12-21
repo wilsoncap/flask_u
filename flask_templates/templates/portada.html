@@ -7,7 +7,10 @@
     <title>Nuestra web</title>
   </head>
   <body>
-    <h1>Esta es mi portada desde flask</h1>
+    <h1>
+      Esta la portada de {{ datos['nombre'] }} viene desde flask este muchacho
+      tiene {{ datos['edad'] }} años, el esta estudiando {{ datos['carrera']}}
+    </h1>
     <img src="../static/img/img1.jpg" alt="codigo" />
   </body>
 </html>

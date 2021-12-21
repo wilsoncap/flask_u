@@ -4,7 +4,20 @@ app = Flask(__name__)
 
 @app.route("/")
 def portada():
-  return render_template("portada.html")
+  diccionario = {'nombre':'Wilson', 'edad':34, 'carrera': 'ing sistemas'}
+  return render_template("portada.html", datos = diccionario)
+
+
+# @app.route("/colores")
+# def colores():
+#   lista = ['verde', 'amarillo','azul', 'morado']
+#   return render_template("colores.html", colores = lista)
+
+@app.route("/frase/<texto>")
+def colores(texto):
+  return render_template("frase.html", tipo = texto)
+
+
 
 
 
