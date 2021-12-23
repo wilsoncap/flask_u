@@ -1,3 +1,4 @@
+import re
 from flask import Flask, render_template, request
 from flask.wrappers import Request
 
@@ -24,6 +25,10 @@ def gracias():
   var1 = request.args.get('nombre')
   var2 = request.args.get('apellidos')
   return render_template("gracias.html", nombre = var1, apellidos = var2)
+
+@app.errorhandler(404)
+def pagina_no_encontrada(e):
+  return render_template('pagina404.html'), 404
   
 
 if __name__ =='__main__':
