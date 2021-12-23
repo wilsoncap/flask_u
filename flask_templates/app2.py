@@ -1,4 +1,5 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+from flask.wrappers import Request
 
 app = Flask(__name__)
 
@@ -8,11 +9,21 @@ def index():
 
 @app.route("/pagina1")
 def pagina1():
-  return render_template('pagina1.html')
+  return render_template("pagina1.html")
 
 @app.route("/pagina2")
 def pagina2():
-  return render_template('pagina2.html')
+  return render_template("pagina2.html")
+
+@app.route("/formulario")
+def formulario():
+  return render_template("formulario.html")
+
+@app.route("/gracias")
+def gracias():
+  var1 = request.args.get('nombre')
+  var2 = request.args.get('apellidos')
+  return render_template("gracias.html", nombre = var1, apellidos = var2)
   
 
 if __name__ =='__main__':

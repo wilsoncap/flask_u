@@ -8,8 +8,9 @@
   </head>
   <body>
     <div>
-      <a href="pagina1">pagina1</a>
-      <a href="pagina2">pagina2</a>
+      <a href="{{ url_for('pagina1') }}">pagina1</a>
+      <a href="{{ url_for('pagina2') }}">pagina2</a>
+      <a href="{{ url_for('static', filename='img1.jpg') }}">imagen</a>
       <br />
       <hr />
       <br />
