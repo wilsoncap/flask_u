@@ -1,0 +1,17 @@
+{% extends 'basico.html' %} {% block contenido %}
+
+<h3>Debe complir lo siguiente</h3>
+
+<ul>
+  <li>Debe empezar con una letra mayuscula</li>
+  <li>Debe contener alguna letra minuscula</li>
+  <li>Debe contener algun numero</li>
+</ul>
+
+<form action="{{ url_for('resultado') }}">
+  Nombre: <input type="text" name="nombre" />
+  <br />
+  <input type="submit" name="" id="enviar datos" />
+</form>
+
+{% endblock %}

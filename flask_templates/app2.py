@@ -29,6 +29,15 @@ def gracias():
 @app.errorhandler(404)
 def pagina_no_encontrada(e):
   return render_template('pagina404.html'), 404
+
+
+@app.route("/nombre")
+def nombre():
+  var1 = request.args.get('nombre')
+  return render_template("nombre.html", nombre = var1)
+
+
+
   
 
 if __name__ =='__main__':
