@@ -1,4 +1,17 @@
 {% extends 'basico.html' %} {% block contenido %}
 <h3>el resulatdo es el siguiente</h3>
 
-{% endblock %}
+{% if todo %}
+<p>El nombre es valido</p>
+{% else %}
+<ul>
+  {% if not minuscula %}
+  <li>El nombre no tiene letras minusculas</li>
+  {% endif %} {% if not mayuscula %}
+  <li>El nombre no empieza por mayuscula</li>
+  {% endif %} {% if not numero %}
+  <li>El nombre no tiene ningun numero</li>
+  {% endif %}
+</ul>
+
+{% endif %} {% endblock %}
