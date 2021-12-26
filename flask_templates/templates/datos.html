@@ -1,0 +1,18 @@
+<h3>Introdusca estos datos</h3>
+<form method="POST">
+  # esta llamando todos los atributos de la clase formulario que creamos en app4
+  <br />
+  {{ formulario.hidden_tag() }}
+  <br />
+  {{ formulario.nombre.label }} {{ formulario.nombre}}
+  <br />
+  {{ formulario.edad.label }} {{formulario.edad }}
+  <br />
+  {{ formulario.sexo.label }} {{formulario.sexo }}
+  <br />
+  {{ formulario.color.label }} {{formulario.color }}
+  <br />
+  comentario {{ formulario.comentario }}
+  <br />
+  {{ formulario.boton }}
+</form>
