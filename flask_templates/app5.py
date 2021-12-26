@@ -8,8 +8,7 @@ app.config['SECRET_KEY'] = 'miclave'
 
 class Formulario(FlaskForm):
   nombre = StringField('Introduce tu nombre')
-	boton = SubmitField("Enviar mensaje")
- 
+  boton = SubmitField("Enviar")
 
 @app.route('/mensaje',methods=['GET','POST'])
 def mensaje():
