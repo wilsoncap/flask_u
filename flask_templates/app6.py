@@ -1,6 +1,7 @@
 import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 
 directorio = os.path.abspath(os.path.dirname(__file__))
 
@@ -12,6 +13,8 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 basededatos = SQLAlchemy(app)
 
+Migrate(app, basededatos)
+
 # creacion del modelo de base de datos
 
 class Persona(basededatos.Model):
@@ -20,11 +23,13 @@ class Persona(basededatos.Model):
   id = basededatos.Column(basededatos.Integer, primary_key =True)
   nombre = basededatos.Column(basededatos.Text)
   edad = basededatos.Column(basededatos.Integer)
+  color =  basededatos.Column(basededatos.Text)
   
-  def __init__(self, nombre, edad):
+  def __init__(self, nombre, edad, color):
     self.nombre = nombre
     self.edad = edad
+    self.color = color
   
   def __repr__(self):
-      texto = "Personas : nombre={} y edad={}".format(self.nombre, self.edad)
+      texto = "Personas : nombre={},  edad={} y color={}".format(self.nombre, self.edad, self.color)
       return texto
